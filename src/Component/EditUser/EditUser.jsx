@@ -3,6 +3,7 @@ import './EditUser.css'; // Add styling for the modal
 
 const EditUser = ({ isVisible, onClose, onSave, user }) => {
   const [formData, setFormData] = useState({
+    _id: '',
     name: '',
     email: '',
     phoneNo: '',
@@ -13,6 +14,7 @@ const EditUser = ({ isVisible, onClose, onSave, user }) => {
   useEffect(() => {
     if (user) {
       setFormData({
+        _id: user._id || '',
         name: user.name || '',
         email: user.email || '',
         phoneNo: user.phoneNo || '',

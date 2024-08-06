@@ -102,14 +102,14 @@ const UserListPage = () => {
     }
   };
 
-  const handleUpdateUser = async () => {
+  const handleUpdateUser = async (updatedData) => {
     try {
-      const response = await fetch(`http://localhost:3000/User/${currentUser?._id}`, {
+      const response = await fetch(`http://localhost:3000/User/${updatedData._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(currentUser)
+        body: JSON.stringify(updatedData)
       });
 
       if (response.ok) {
@@ -199,7 +199,7 @@ const UserListPage = () => {
         user={currentUser}
       />
 
-      <ToastContainer /> {/* Add ToastContainer to your component */}
+      <ToastContainer />
     </div>
   );
 };
